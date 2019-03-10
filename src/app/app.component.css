@@ -1,0 +1,94 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+
+.is-mobile .toolbar {
+  position: fixed;
+  /* Make sure the toolbar will stay on top of the content as it scrolls past.   #2f2f2f*/
+  z-index: 2;
+}
+
+h1.app-name {
+  margin-left: 8px;
+}
+
+.sidenav-container {
+  /* When the sidenav is not fixed, stretch the sidenav container to fill the available space. This
+       causes `<mat-sidenav-content>` to act as our scrolling element for desktop layouts. */
+  flex: 1;
+}
+
+.is-mobile .sidenav-container {
+  /* When the sidenav is fixed, don't constrain the height of the sidenav container. This allows the
+       `<body>` to be our scrolling element for mobile layouts. */
+  flex: 1 0 auto;
+}
+
+.is-mobile[_ngcontent-c0] .toolbar[_ngcontent-c0] {
+  position: initial !important;
+}
+
+/* Personalizados */
+
+.principal-div{
+  padding: 15px;
+}
+.menu{
+  width: 290px;
+  background-color: #399370;
+  border-top: 1px solid #777777;
+}
+
+.toolbar{
+  background-color: black;
+  color: white;
+}
+
+.button-menu{
+  color: white;
+  border-bottom: 1px solid #539e89;
+}
+
+.button-menu:hover{
+  background-color: #328162;
+}
+
+.nav-list{
+  padding: 0px 10px;
+}
+
+.job-systems-icon{
+  margin: 0 7px 0 25px;
+}
+
+.job-systems-span{
+  margin-top:3px;
+}
+
+.link-home{
+  display:flex; 
+  cursor: pointer; 
+  text-decoration: none; 
+  padding-right: 20px;
+}
+
+.color-toolbar{
+  color: white;
+
+}
+
+.color-toolbar:hover{
+  color:#d9d9d9;
+}
+
+.position-right{
+  margin-left: auto;
+}
+
+

@@ -1,0 +1,47 @@
+<div class="container" [class.is-mobile]="mobileQuery.matches">
+  <mat-toolbar class="toolbar">
+      <button mat-icon-button (click)="snav.toggle()" class="color-toolbar">
+        <mat-icon>menu</mat-icon>
+      </button>
+      <a href="https://stackoverflow.com" (click)="snav.toggle()" class="link-home color-toolbar">
+        <img alt="home" height="37" src="assets/images/Job-Systems.png" class="job-systems-icon">
+        <span class="job-systems-span"> Job Systems </span>
+      </a>
+      
+      <button  style="flex:1" mat-button >
+          <mat-icon>search</mat-icon>
+
+        </button>
+
+      <div class="position-right">
+      <button class="color-toolbar" mat-button [matMenuTriggerFor]="mesagge">
+        <mat-icon>mail</mat-icon>
+      </button>
+      <mat-menu #mesagge="matMenu">
+        <button mat-menu-item>Item 1saaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa</button>
+        <button mat-menu-item>Item 2assssssssssssssssssssssssssssssssssss</button>
+      </mat-menu>
+      <button class="color-toolbar position-right" mat-button [matMenuTriggerFor]="menu">
+        <mat-icon>arrow_drop_down</mat-icon>
+      </button>
+      <mat-menu #menu="matMenu">
+        <button mat-menu-item>Item 1</button>
+        <button mat-menu-item>Item 2</button>
+      </mat-menu>
+    </div>
+  </mat-toolbar>
+  <mat-sidenav-container class="sidenav-container">
+    <mat-sidenav class="menu" #snav [mode]="mobileQuery.matches ? 'over' : 'side'">
+
+      <mat-nav-list class="nav-list">
+        <a mat-list-item routerLink="." class="button-menu" *ngFor="let nav of fillerNav">{{nav}}</a>
+      </mat-nav-list>
+    </mat-sidenav>
+    <mat-sidenav-content>
+
+      <div class="principal-div">
+        <router-outlet></router-outlet>
+      </div>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</div>
